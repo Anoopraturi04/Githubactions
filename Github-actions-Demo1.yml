@@ -13,9 +13,9 @@ jobs:
         - name: run Linux command 
           run: echo "Hello All"
     job2:
-      runs-on: ubuntu-24.04  # vm2
+      runs_on: ubuntu-24.04  # vm2
       steps: 
         - name: run multiple linux commands
           run: |
             hostname -s 
-            echo "Thank you All!!!!!!!"
+            echo "Thank you All!!!!!"
