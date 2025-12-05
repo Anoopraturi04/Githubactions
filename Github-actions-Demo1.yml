@@ -1,0 +1,21 @@
+# give a name to workflow
+# 'on' give event to execute the workflow
+# git jobs and its name
+# give runner details
+# give step
+---
+name: workflow to run linux commands
+on: workflow_dispatch # manually run the workflow
+jobs:
+    job1:
+      runs-on: ubuntu-latest  # vm1
+      steps:
+        - name: run Linux command 
+          run: echo "Hello All"
+    job2:
+      runs_on: ubuntu-24.04  # vm2
+      steps: 
+        - name: run multiple linux commands
+          run: |
+            hostname -s 
+            echo "Thank you All!!!!!!!"

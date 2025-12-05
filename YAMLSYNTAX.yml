@@ -1,0 +1,50 @@
+# to give comments 
+# its not progrmming or scripting
+# it just a way of storing data in form of key: value 
+# a file with YAML code will have extension .yml or .yaml 
+# declarative code 
+# Syntax => key: value
+# keys are generally provided to us by  the tool 
+# we just have to provide the values 
+# a key: value in YAML is called as a map 
+# a key can store- a string, a number or list of values or a map 
+
+
+# Examples 1: A key storing a single value 
+---
+Company: Zopper
+Employee:  Anoop Raturi 
+Profile:  Devops
+Place: Noida
+   
+
+# Example 2: A key storing a list of value 
+---
+Company: 
+  - Zopper
+Employee:  
+  - Anoop Raturi 
+  - Rajat Raturi
+  - Prateek Negi
+Profile:  
+  - Devops
+  - Business
+  - Teacher
+Place: 
+  - Noida
+  - Uttrakhand
+  - Haryana
+
+# Example 3: A key storing a map(key and value)
+---
+Company: Skillfyme
+Trainers:
+  - name: sonal
+    phone: 34567876
+    email: 354436@gamil.com
+  - name: Anoop
+    phone: 345678sd76
+    email: 354er436@gamil.com
+  - name: Rajat
+    phone: 345678df
+    email: 354df436@gamil.com
