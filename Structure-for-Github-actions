@@ -1,0 +1,55 @@
+GITHUB actions workflow:
+========================================
+1. workflow
+an automated process that will run one or more jobs
+Consist of jobs to executed on the current github repo
+Every workflow we give a name to it 
+Written in YAML
+
+2. Events
+In a workflow we have eents/triggers
+What activity in the repo sholud trigger the execution of this workflow 
+Example:
+ - run the workflow when there is a new commit
+ - run the workflow when there is a new push
+ - run the workflow when there is a new pull request
+ - run the workflow when there is a new merge request
+ - run the workflow when there is a new branch created or deleted
+ - run the workflow as per the schedule
+ - run the workflow from another workflow
+ - run the workflow manually 
+
+ 3. Jobs:
+==========================================
+ - what are the tasks to be executed 
+ - what commands to be executed
+ - in a workflow we can have many jobs 
+ - In a workflow jobs run in parallel
+ - every job will have a runner and steps to be executed on runner 
+
+ 4. Runner - Agent
+==========================================
+ - Ready-to-use runners managed by Github
+ - A VM where we have to run the jobs 
+ - A tempoarary Virtual machine provided by github actions 
+ - these are azure VM that are readily available 
+ - Github actions will run our jobs on these runners/vms/agents
+ - Once the job is completed, Github actions will terminate the machine
+ - the VM can be of OS
+    - linux ubuntu 
+    - Windows
+    - mac
+However Github actions also support self-hosted runners -(your own VMsthat are persistent)
+Self-Hosted runners are virtual machines for Github Actions workflows taht you manage and maintain outside of Github
+
+4 Steps:
+==========================================
+workflow --> JOB --> Runner --> Steps
+
+Jobs will have steps to be run on the runner
+every steps will have a name
+every step is an action/command to be executed
+A step can alson be a script 
+A step will have conditions, variables, artifacts
+
+
