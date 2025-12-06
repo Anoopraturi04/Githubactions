@@ -1,0 +1,28 @@
+name: build nodejs application 
+on:
+ workflow_dispatch:
+ push:
+   branches:
+     - master 
+   pull_request:
+     - master  
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Clone the repo 
+      uses: actions/checkout@v6 
+    - name: Install nodejs
+      #run:  we can use this as well but github actions provides some inbuilt functions
+      #  apt-get update
+      #  apt-get insatll nodejs -y
+      uses: actions/setup-node@v6
+      with: 
+        node-version: 18
+        cache: 'npm'
+    - name: Install node dependencies
+      run: npm ci # to install the package that are there in the repo package.json
+    - name: Execute test cases
+      run: npm test 
+    - name: Build the nodejs code 
+      run: npm run build 
