@@ -4,7 +4,7 @@ on:
  push:
    branches:
      - master 
-   pull_request:
+ pull_request:
      - master  
 jobs:
   job1:
@@ -25,4 +25,4 @@ jobs:
     - name: Execute test cases
       run: npm test 
     - name: Build the nodejs code 
-      run: npm run build 
+      run: npm run build
