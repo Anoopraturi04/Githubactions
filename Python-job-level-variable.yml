@@ -34,4 +34,14 @@ jobs:
       uses: actions/setup-python@v6
       with:
         python-version: ${{ env.PYTHON_VERSION }}
-   
+  Job3: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: clone the repo 
+      uses: actions/checkout@v6
+    - name: Insatll Python  on runner
+      env: # Variable at steps level
+        PYTHON_VERSION: 3.12 
+      uses: actions/setup-python@v6
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
