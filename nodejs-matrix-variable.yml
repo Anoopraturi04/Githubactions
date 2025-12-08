@@ -14,10 +14,12 @@ jobs:
     strategy:
      matrix: # it is like a loop to repeat the steps on each operating_system value 
       operating_system: [ubuntu-latest,windows-latest]
-      #exclude: # don't run on ubutnu-latest, run on others
-      # ubuntu-latest
-      #include: # add a new value to the list, it will run on ubuntu, windows and mac.
-      # mac-latest
+      artifact_name: [artifact-node-ubuntu, artifact-node-windows]
+      exclude: # don't execute these combinations
+      - operating_system: ubuntu-latest
+        artifact_name: artifact-node-windows
+      - operating_system: windows-lates
+        artifact_name: artifact-node-ubuntu
     runs-on: ${{ matrix.operating_system }}
     steps: 
     - name: Clone the repo 
@@ -33,3 +35,8 @@ jobs:
       run: npm test 
     - name: Build the nodejs code 
       run: npm run build
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: $ {{ matrix.artifact_name }}# we need to add a variable which changes as per the OS
+        path: dist/
